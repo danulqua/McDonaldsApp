@@ -1,0 +1,77 @@
+.navbar {
+    background-color: #ce2a1d;
+}
+
+main {
+    min-height: 800px;
+}
+
+.stocks-block {
+    margin-top: 20px;
+}
+
+.carousel-item h3 {
+    bottom: 15px;
+    left: 20px;
+}
+
+#carousel-prev, #carousel-next {
+    font-size: 48px;
+    transition: color ease 0.3s;
+}
+
+#carousel-prev:hover, #carousel-next:hover {
+    cursor: pointer;
+    color: #ce2a1d;
+}
+
+.carousel-item.hidden {
+    visibility: hidden;
+}
+
+.carousel-item.hide {
+    animation: carousel-hide .5s;
+    animation-fill-mode: forwards;
+}
+
+.carousel-item.show {
+    animation: carousel-show .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes carousel-hide {
+    0% {
+        opacity: 100%;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0%;
+        visibility: hidden;
+    }
+}
+
+@keyframes carousel-show {
+    0% {
+        opacity: 0%;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 100%;
+        visibility: visible;
+    }
+}
+
+.carousel-dots {
+    font-size: 10px;
+    color: grey;
+}
+
+.carousel-dots i {
+    transition: color ease 0.3s;
+}
+
+.carousel-dots i.selected {
+    color: #212529;
+}
