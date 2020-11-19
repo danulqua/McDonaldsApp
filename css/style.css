@@ -75,3 +75,17 @@ main {
 .carousel-dots i.selected {
     color: #212529;
 }
+
+/* ФУТЕР, FOOTER */
+footer a, footer a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer i {
+    font-size: 24px;
+}
