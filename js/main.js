@@ -10,7 +10,7 @@ let templateEngine = new TemplateEngine();
 
 let view;
 window.onload = () => {
-    fetch("http://my-json-server.typicode.com/danil0110/McDonaldsDB/db")
+    fetch("https://my-json-server.typicode.com/danil0110/McDonaldsDB/db")
         .then(response => response.json())
         .then(data => {
             db = data;
