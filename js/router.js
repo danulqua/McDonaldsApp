@@ -1,15 +1,14 @@
 class Router {
     getCurrentPath() {
-        let viewName = "homePage";
+        let viewName = 'homePage';
         let categoryId = 0;
         let productId = 0;
-        switch (window.location.hash.split('#')[1]) {
-            case 'products':
-                viewName = 'productsPage';
-                endpointName = 'products';
-                break;
-            default:
-                break;
+        let hash = window.location.hash.split(/[#/]/);
+
+        if (hash.length == 2 && hash[1] == 'categories' || hash.length == 3 && hash[1] == 'categories' && hash[2] == '') {
+            viewName = 'categoriesPage';
+        } else {
+            window.location.hash = '';
         }
 
         return {

@@ -34,8 +34,6 @@ function prevOffer() {
     carouselDots[currentItem].classList.toggle('selected');
 }
 
-window.onhashchange = () => {
-    if (window.location.hash == '') {
-        currentItem = 0;
-    }
-}
+window.addEventListener('hashchange', () => {
+    currentItem = 0;
+})

@@ -1,7 +1,7 @@
 const view = (db, unC, unP) => {
     let result = ``;
     result += `
-    <div class="offers-block pt-4">
+    <div class="mt-4 pt-4">
         <h2 class="text-center text-dark font-weight-bold mb-5">Спеціальні пропозиції</h2>
         <div class="carousel rounded shadow overflow-hidden">
     `;
