@@ -14,11 +14,15 @@ window.onload = () => {
         .then(response => response.json())
         .then(data => {
             db = data;
-            let { viewName, endpointName } = router.getCurrentPath();
+            let { viewName, categoryId, productId } = router.getCurrentPath();
             import(`../views/${viewName}.js`)
                 .then(viewModule => {
                     view = viewModule.default;
-                    templateEngine.render(view(db[endpointName]));
+                    templateEngine.render(view(db, categoryId, productId));
             })
         })
+}
+
+function test() {
+    console.log("test");
 }
