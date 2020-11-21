@@ -34,7 +34,7 @@
                         </li>
                     </ul>
                     <a href="#cart">
-                        <button class="btn btn-warning d-none d-md-block">
+                        <button id="cart-button" class="btn btn-warning d-none d-md-block">
                             <i class="fas fa-shopping-basket"></i>
                         </button>
                     </a>
@@ -43,10 +43,60 @@
         </nav>
         <main class="container">
             <div class="mt-4 pt-4">
-                <h2 class="text-center text-dark font-weight-bold">Название оффера</h2>
-                <img class="w-100 mt-4 mb-4 rounded shadow" src="img/offers/realamerican.jpg" draggable="false" alt="Real American" />
-                <h2 class="text-center text-dark font-weight-bold mb-4">Слоган оффера</h2>
-                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repellat, animi, illo ipsa neque consequatur eligendi iusto aliquam ratione, dolorum impedit doloribus enim consequuntur veniam quia accusantium incidunt sapiente. Recusandae tempora, sed necessitatibus accusantium nisi sit illo ad, earum mollitia quas vel nemo. Natus cum, placeat accusamus quia eveniet minima.</p>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <img class="w-100" src="img/products/burgers/Big Kansas.jpg" alt="">
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column justify-content-center">
+                        <h2 class="text-center text-dark font-weight-bold mt-4">Біг Канзас</h2>
+                        <p class="text-dark mt-4 mb-4">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, tenetur dicta nemo, libero obcaecati optio maxime laudantium fuga voluptas totam nesciunt unde! Numquam voluptas eaque eum maiores, aspernatur molestias mollitia itaque quisquam veritatis amet totam neque tempore sed. Est recusandae vel cumque esse, provident aspernatur nemo! Eligendi cum quaerat ipsum.
+                        </p>
+                        <div class="d-flex justify-content-center">
+                            <h4 class="text-center text-dark font-weight-bold mr-2">
+                                92 грн
+                            </h4>
+                            <div id="add-to-cart" class="btn btn-warning text-dark font-weight-bold ml-2" product="1">
+                                В кошик
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popular-products">
+                <h2 class="text-center text-dark font-weight-bold">Інші продукти</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card pt-2 mt-5 ml-auto mr-auto" style="width: 18rem;">
+                            <a href="#products/4">
+                                <img src="img/products/burgers/Big Mac.jpg" class="card-img-top" alt="Big Mac">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center text-dark">Біг Мак</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card pt-2 mt-5 ml-auto mr-auto" style="width: 18rem;">
+                            <a href="#products/6">
+                                <img src="img/products/burgers/Cheeseburger.jpg" class="card-img-top" alt="Big Mac">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center text-dark">Чізбургер</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card pt-2 mt-5 ml-auto mr-auto" style="width: 18rem;">
+                            <a href="#products/13">
+                                <img src="img/products/drinks/CocaCola.jpg" class="card-img-top" alt="Big Mac">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center text-dark">Кока-Кола</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer class="bg-dark text-white mt-5 pb-4">
@@ -112,5 +162,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <script src="js/main.js" type="module"></script>
         <script src="js/carousel.js"></script>
+        <script src="js/cart.js"></script>
     </body>
 </html>

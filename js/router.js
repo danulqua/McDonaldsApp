@@ -14,6 +14,9 @@ class Router {
         } else if (hash.length == 3 && hash[1] == 'category' && 0 < hash[2] && db.categories.length >= hash[2]) {
             viewName = 'categoryPage';
             categoryId = hash[2];
+        } else if (hash.length == 3 && hash[1] == 'product' && 0 < hash[2] && db.products.length >= hash[2]) {
+            viewName = 'productPage';
+            productId = hash[2];
         } else {
             window.location.hash = '';
         }

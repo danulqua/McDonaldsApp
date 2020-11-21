@@ -18,7 +18,12 @@ window.onload = () => {
                     view = viewModule.default;
                     renderPage(categoryId, productId, offerId);
             })
-        })
+        });
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 }
 
 window.onhashchange = () => {
@@ -27,7 +32,12 @@ window.onhashchange = () => {
         .then(viewModule => {
             view = viewModule.default;
             renderPage(categoryId, productId, offerId);
-    })
+    });
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 function renderPage(categoryId, productId, offerId) {
