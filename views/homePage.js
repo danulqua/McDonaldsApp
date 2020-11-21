@@ -30,7 +30,7 @@ const view = (db, unC, unP) => {
     result += `
                     </div>
                     <div class="carousel-control d-flex justify-content-between align-items-center pl-5 pr-5">
-                    <div id="carousel-prev">
+                    <div id="carousel-prev" onclick="prevOffer();">
                         <i class="fas fa-arrow-left"></i>
                     </div>
                     <div class="carousel-dots">
@@ -49,7 +49,7 @@ const view = (db, unC, unP) => {
     }
     result += `
                     </div>
-                    <div id="carousel-next" onclick="test()">
+                    <div id="carousel-next" onclick="nextOffer();">
                         <i class="fas fa-arrow-right"></i>
                     </div>
                 </div>
@@ -58,24 +58,42 @@ const view = (db, unC, unP) => {
                 <h2 class="text-center text-dark font-weight-bold">Популярні продукти</h2>
                 <div class="row">
     `
-    db.popularProducts.map(id => {
-        db.products.map(product => {
-            if (product.id == id) {
-                result += `
+    for (let i = 0; i < db.popularProducts.length; i++) {
+        for (let j = 0; j < db.products.length; j++) {
+            if (db.products[j].id == db.popularProducts[i]) {
+                if (i != 2) {
+                    result += `
                     <div class="col-lg-4 col-md-6">
                         <div class="card pt-2 mt-5 ml-auto mr-auto" style="width: 18rem;">
-                            <a href="#product/${product.id}">
-                                <img src="${product.img}" class="card-img-top" alt="${product.name}">
+                            <a href="#product/${db.products[j].id}">
+                                <img src="${db.products[j].img}" class="card-img-top" alt="${db.products[j].name}">
                                 <div class="card-body">
-                                    <h4 class="card-text text-center text-dark">${product.name}</h4>
+                                    <h4 class="card-text text-center text-dark">${db.products[j].name}</h4>
                                 </div>
                             </a>
                         </div>
                     </div>
                 `
+                }
+                else {
+                    result += `
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card pt-2 mt-5 ml-auto mr-auto" style="width: 18rem;">
+                            <a href="#product/${db.products[j].id}">
+                                <img src="${db.products[j].img}" class="card-img-top" alt="${db.products[j].name}">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center text-dark">${db.products[j].name}</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    `
+                }
             }
-        })
-    })
+            
+        }
+        
+    }
     result += `
                 </div>
             </div>

@@ -1,5 +1,3 @@
-import './carousel.js';
-
 import TemplateEngine from './templateEngine.js';
 import Router from './router.js';
 
@@ -21,8 +19,4 @@ window.onload = () => {
                     templateEngine.render(view(db, categoryId, productId));
             })
         })
-}
-
-function test() {
-    console.log("test");
 }

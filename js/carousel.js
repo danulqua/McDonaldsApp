@@ -1,10 +1,11 @@
-const leftArrow = document.getElementById('carousel-prev');
-const rightArrow = document.getElementById('carousel-next');
-const carouselItems = document.querySelectorAll('.carousel-item');
-const carouselDots = document.querySelectorAll('.fa-circle');
 let currentItem = 0;
 
-rightArrow.onclick = () => {
+function nextOffer() {
+    let leftArrow = document.getElementById('carousel-prev');
+    let rightArrow = document.getElementById('carousel-next');
+    let carouselItems = document.querySelectorAll('.carousel-item');
+    let carouselDots = document.querySelectorAll('.fa-circle');
+
     carouselItems[currentItem].classList.add('hide');
     carouselItems[currentItem].classList.remove('show');
     carouselDots[currentItem++].classList.toggle('selected');
@@ -16,7 +17,12 @@ rightArrow.onclick = () => {
     carouselDots[currentItem].classList.toggle('selected');
 }
 
-leftArrow.onclick = () => {
+function prevOffer() {
+    let leftArrow = document.getElementById('carousel-prev');
+    let rightArrow = document.getElementById('carousel-next');
+    let carouselItems = document.querySelectorAll('.carousel-item');
+    let carouselDots = document.querySelectorAll('.fa-circle');
+
     carouselItems[currentItem].classList.add('hide');
     carouselItems[currentItem].classList.remove('show');
     carouselDots[currentItem--].classList.toggle('selected');
@@ -26,4 +32,10 @@ leftArrow.onclick = () => {
     carouselItems[currentItem].classList.add('show');
     carouselItems[currentItem].classList.remove('hide');
     carouselDots[currentItem].classList.toggle('selected');
+}
+
+window.onhashchange = () => {
+    if (window.location.hash == '') {
+        currentItem = 0;
+    }
 }
