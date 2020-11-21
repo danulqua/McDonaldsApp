@@ -36,7 +36,7 @@ const view = (db) => {
                 </div>
             </div>
     `;
-    
+
     return result;
 }
 

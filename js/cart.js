@@ -30,33 +30,60 @@ function addToCart() {
 
 function calculateQuantity() {
     let result = 0;
-    JSON.parse(localStorage.getItem('cart')).map(product => {
-        result += product.count;
-    });
-
+    if (JSON.parse(localStorage.getItem('cart').length != 0)) {
+        JSON.parse(localStorage.getItem('cart')).map(product => {
+            result += product.count;
+        });
+    }
     return result;
 }
 
 function displayQuantityOnCartButton() {
+    let quantity = calculateQuantity();
     let span = document.getElementById('cartQuantity');
     if (span == null) {
-        let cartButton = document.getElementById('cart-button');
-        span = document.createElement('span');
-        span.id = 'cartQuantity';
-        span.innerHTML = calculateQuantity();
-        cartButton.appendChild(span);
+        if (quantity != 0) {
+            let cartButton = document.getElementById('cart-button');
+            span = document.createElement('span');
+            span.id = 'cartQuantity';
+            span.innerHTML = quantity;
+            cartButton.appendChild(span);
+        }
     } else {
-        if (calculateQuantity() == 0) {
-            span.remove;
+        if (quantity == 0) {
+            span.remove();
         } else {
-            span.innerHTML = calculateQuantity();
+            span.innerHTML = quantity;
         }
     }
 }
 
-document.querySelector('.row').onclick = event => {
+document.querySelector('main').onclick = event => {
     if (event.target.classList.contains('delete-button')) {
-        console.log(event.target.id);
+        let productId = event.target.id.split('-')[1];
+        let card = document.getElementById(`card-${productId}`);
+        let quantity = document.getElementById(`quantity-${productId}`);
+        let total = document.getElementById(`total-${productId}`);
+        let singlePrice = total.innerHTML / quantity.innerHTML;
+        cart = JSON.parse(localStorage.getItem('cart'));
+
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].id == productId) {
+                cart[i].count--;
+                if (cart[i].count == 0) {
+                    card.remove();
+                    cart.splice(i, 1);
+                } else {
+                    quantity.innerHTML = cart[i].count;
+                    total.innerHTML = singlePrice * cart[i].count;
+                }
+
+                break;
+            }
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayQuantityOnCartButton();
     }
 }
 
