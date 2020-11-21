@@ -1,4 +1,4 @@
-const view = (db, unC, unP) => {
+const view = (db) => {
     let result = ``;
     result += `
             <div class="mt-4 pt-4">

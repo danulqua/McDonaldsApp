@@ -1,4 +1,4 @@
-const view = (db, categoryId, unP) => {
+const view = (db, categoryId) => {
     let result = ``;
     result += `
             <div class="mt-4 pt-4">

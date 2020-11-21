@@ -3,9 +3,13 @@ class Router {
         let viewName = 'homePage';
         let categoryId = 0;
         let productId = 0;
+        let offerId = 0;
         let hash = window.location.hash.split(/[#/]/);
 
-        if (hash.length == 2 && hash[1] == 'categories' || hash.length == 3 && hash[1] == 'categories' && hash[2] == '') {
+        if (hash.length == 3 && hash[1] == 'offer' && 0 < hash[2] && db.offers.length >= hash[2]) {
+            viewName = 'offerPage';
+            offerId = hash[2];
+        } else if (hash.length == 2 && hash[1] == 'categories' || hash.length == 3 && hash[1] == 'categories' && hash[2] == '') {
             viewName = 'categoriesPage';
         } else if (hash.length == 3 && hash[1] == 'category' && 0 < hash[2] && db.categories.length >= hash[2]) {
             viewName = 'categoryPage';
@@ -17,7 +21,8 @@ class Router {
         return {
             viewName,
             categoryId,
-            productId
+            productId,
+            offerId
         };
     }
 }

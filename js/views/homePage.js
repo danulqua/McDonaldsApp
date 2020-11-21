@@ -1,4 +1,4 @@
-const view = (db, unC, unP) => {
+const view = (db) => {
     let result = ``;
     result += `
     <div class="mt-4 pt-4">
@@ -10,7 +10,7 @@ const view = (db, unC, unP) => {
             result += `
             <div class="carousel-item hidden show d-block position-relative">
             <h3 class="position-absolute text-white font-weight-bold">${offer.slogan}</h3>
-            <a href="#offers/${offer.id}">
+            <a href="#offer/${offer.id}">
                 <img style="width: 100%" src="${offer.img}" draggable="false" alt="${offer.name}" />
             </a>
             </div>
@@ -20,7 +20,7 @@ const view = (db, unC, unP) => {
             result += `
             <div class="carousel-item hidden d-block position-relative">
             <h3 class="position-absolute text-white font-weight-bold">${offer.slogan}</h3>
-            <a href="#offers/${offer.id}">
+            <a href="#offer/${offer.id}">
                 <img style="width: 100%" src="${offer.img}" draggable="false" alt="${offer.name}" />
             </a>
             </div>
