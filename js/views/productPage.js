@@ -1,25 +1,23 @@
 const view = (db, productId) => {
     let result = ``;
     result += `
-    <div class="mt-4 pt-4">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <img class="w-100" src="${db.products[productId - 1].img}" alt="${db.products[productId - 1].name}">
-                    </div>
-                    <div class="col-lg-4 d-flex flex-column justify-content-center">
-                        <h2 class="text-center text-dark font-weight-bold mt-4">${db.products[productId - 1].name}</h2>
-                        <p class="text-dark text-center mt-4 mb-4">
-                            ${db.products[productId - 1].description}
-                        </p>
-                        <div class="d-flex justify-content-center">
-                            <h4 class="text-center text-dark font-weight-bold mr-2">
-                                ${db.products[productId - 1].price} грн
-                            </h4>
-                            <div id="${db.products[productId - 1].id}" class="btn btn-warning text-dark font-weight-bold ml-2" product="${db.products[productId - 1].id}" onclick="addToCart();">
-                                В кошик
-                            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <img class="w-100" src="${db.products[productId - 1].img}" alt="${db.products[productId - 1].name}">
+                </div>
+                <div class="col-lg-4 d-flex flex-column justify-content-center">
+                    <h2 class="text-center text-dark font-weight-bold mt-4">${db.products[productId - 1].name}</h2>
+                    <p class="text-dark text-center mt-4 mb-4">
+                        ${db.products[productId - 1].description}
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <h4 class="text-center text-dark font-weight-bold mr-2">
+                            ${db.products[productId - 1].price} грн.
+                        </h4>
+                        <div id="${db.products[productId - 1].id}" class="btn btn-warning text-dark font-weight-bold ml-2" product="${db.products[productId - 1].id}" onclick="addToCart();">
+                            В кошик
                         </div>
-                    </div>
+                     </div>
                 </div>
             </div>
             <div class="popular-products">

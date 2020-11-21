@@ -54,6 +54,12 @@ function displayQuantityOnCartButton() {
     }
 }
 
+document.querySelector('.row').onclick = event => {
+    if (event.target.classList.contains('delete-button')) {
+        console.log(event.target.id);
+    }
+}
+
 window.addEventListener('load', () => {
     displayQuantityOnCartButton();
-})
+});
