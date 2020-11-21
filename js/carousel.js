@@ -4,9 +4,6 @@ const carouselItems = document.querySelectorAll('.carousel-item');
 const carouselDots = document.querySelectorAll('.fa-circle');
 let currentItem = 0;
 
-console.log(carouselItems[0]);
-console.log(carouselDots);
-
 rightArrow.onclick = () => {
     carouselItems[currentItem].classList.add('hide');
     carouselItems[currentItem].classList.remove('show');

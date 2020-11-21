@@ -1,3 +1,8 @@
+a, a:hover {
+    color: white;
+    text-decoration: none;
+}
+
 .navbar {
     background-color: #ce2a1d;
 }
@@ -6,7 +11,7 @@ main {
     min-height: 800px;
 }
 
-.stocks-block {
+.offers-block {
     margin-top: 20px;
 }
 
@@ -76,12 +81,11 @@ main {
     color: #212529;
 }
 
-/* ФУТЕР, FOOTER */
-footer a, footer a:hover {
-    color: white;
-    text-decoration: none;
+.popular-products {
+    margin-top: 100px;
 }
 
+/* ФУТЕР, FOOTER */
 footer a:hover {
     text-decoration: underline;
 }
