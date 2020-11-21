@@ -13,7 +13,7 @@ window.onload = () => {
         .then(response => response.json())
         .then(data => {
             db = data;
-            let { viewName, categoryId, productId } = router.getCurrentPath();
+            let { viewName, categoryId, productId } = router.getCurrentPath(db);
             import(`./views/${viewName}.js`)
                 .then(viewModule => {
                     view = viewModule.default;
@@ -23,7 +23,7 @@ window.onload = () => {
 }
 
 window.onhashchange = () => {
-    let { viewName, categoryId, productId } = router.getCurrentPath();
+    let { viewName, categoryId, productId } = router.getCurrentPath(db);
     import(`./views/${viewName}.js`)
         .then(viewModule => {
             view = viewModule.default;
