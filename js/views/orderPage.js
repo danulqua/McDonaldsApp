@@ -41,14 +41,14 @@ const view = db => {
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="firstName">Ім'я*</label>
-                                            <input type="text" class="form-control" id="firstName" required />
+                                            <input type="text" class="form-control" id="firstName" required pattern="[A-Za-zА-Яа-яЁёІіЄєЇї']+" />
                                             <div class="invalid-feedback">Введіть правильне ім'я.</div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="secondName">Прізвище*</label>
-                                            <input type="text" class="form-control" id="secondName" required />
+                                            <input type="text" class="form-control" id="secondName" required pattern="[A-Za-zА-Яа-яЁёІіЄєЇї']+" />
                                             <div class="invalid-feedback">Введіть правильне прізвище.</div>
                                         </div>
                                     </div>
@@ -98,28 +98,28 @@ const view = db => {
                                 <hr />
                                 <h4 class="text-dark font-weight-bold pb-2">Платіжна інформація</h4>
                                 <div class="form-group">
-                                    <label for="cardNumber">Номер карти*</label>
-                                    <input type="text" class="form-control" id="cardNumber" required minlength="16" maxlength="16" pattern="[0-9]{16}" />
+                                    <label for="cc-number">Номер карти*</label>
+                                    <input type="text" inputmode="numeric" class="form-control" id="cc-number" required minlength="16" maxlength="16" pattern="[0-9]{16}" />
                                     <div class="invalid-feedback">Введіть правильний номер карти.</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="expireDate">Термін дії*</label>
-                                            <input type="text" class="form-control" id="expireDate" required minlength="5" maxlength="5" placeholder="07/25" pattern="[0-9]{2}/[0-9]{2}" />
-                                            <div class="invalid-feedback">Оберіть дату доставки.</div>
+                                            <label for="cc-expireDate">Термін дії*</label>
+                                            <input type="text" class="form-control" id="cc-expireDate" required minlength="5" maxlength="5" placeholder="07/25" pattern="[0-9]{2}/[0-9]{2}" />
+                                            <div class="invalid-feedback">Введіть правильний термін дії.</div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="cvv">CVV*</label>
-                                            <input type="text" class="form-control" id="cvv" required minlength="3" maxlength="3" placeholder="289" pattern="[0-9]{3}" />
+                                            <label for="cc-cvv">CVV*</label>
+                                            <input type="text" inputmode="numeric" class="form-control" id="cc-cvv" required minlength="3" maxlength="3" placeholder="289" pattern="[0-9]{3}" />
                                             <div class="invalid-feedback">Введіть правильний CVV-код.</div>
                                         </div>
                                     </div>
                                 </div>
                                 <hr />
-                                <button id="submitButton" class="btn btn-warning font-weight-bold" type="submit">Сплатити</button>
+                                <button id="submitButton" class="btn btn-warning font-weight-bold" type="submit">Замовити</button>
                             </form>
                         </div>
                     </div>

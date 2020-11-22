@@ -89,12 +89,21 @@ document.querySelector('main').addEventListener('click', event => {
 
 document.querySelector('main').addEventListener('click', event1 => {
     if (event1.target.id == 'submitButton') {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
         let forms = document.getElementsByClassName('needs-validation');
         let validation = Array.prototype.filter.call(forms, form => {
             form.addEventListener('submit', event2 => {
                 event2.preventDefault();
                 event2.stopPropagation();
                 if (form.checkValidity()) {
+                    document.querySelector('main').innerHTML = `
+                    <div class="mt-4 pt-4">
+                                <div class="loading-spinner"></div>
+                    </div>
+                    `;
                     fetch("https://my-json-server.typicode.com/danil0110/McDonaldsDB/products", { method: 'POST' })
                         .then(response => {
                             if (response.ok) {

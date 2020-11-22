@@ -42,7 +42,7 @@ const view = db => {
 
     cart = [];
     localStorage.setItem('cart', JSON.stringify(cart));
-    
+
     let countText = document.getElementById('cartQuantity');
     if (countText != null) {
         countText.remove();
