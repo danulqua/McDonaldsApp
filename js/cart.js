@@ -95,12 +95,21 @@ document.querySelector('main').addEventListener('click', event1 => {
                 if (!form.checkValidity()) {
                     event2.preventDefault();
                     event2.stopPropagation();
+                } else {
+                    clearCart();
                 }
                 form.classList.add('was-validated');
             });
         });
     }
 });
+
+function clearCart() {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayQuantityOnCartButton();
+}
 
 window.addEventListener('load', () => {
     displayQuantityOnCartButton();

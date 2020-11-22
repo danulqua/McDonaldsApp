@@ -19,7 +19,10 @@ class Router {
             productId = hash[2];
         } else if (hash.length == 2 && hash[1] == 'cart' || hash.length == 3 && hash[1] == 'cart' && hash[2] == '') {
             viewName = 'cartPage';
-        } else {
+        } else if (hash.length == 2 && hash[1] == 'order' || hash.length == 3 && hash[1] == 'order' && hash[2] == '') {
+            viewName = 'orderPage';
+        }
+        else {
             window.location.hash = '';
         }
 
