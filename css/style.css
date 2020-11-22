@@ -11,6 +11,10 @@ main {
     min-height: 800px;
 }
 
+nav a.nav-link:hover {
+    text-decoration: underline;
+}
+
 .carousel-item h3 {
     bottom: 15px;
     left: 20px;
@@ -75,6 +79,16 @@ main {
 
 .carousel-dots i.selected {
     color: #212529;
+}
+
+div.card {
+    transition: 0.3s ease;
+}
+
+div.card:hover {
+    transform: translateY(-5px);
+    border-color: #ffc107;
+    box-shadow: 0px 5px 10px rgba(255, 193, 7, 0.7);
 }
 
 .popular-products {
