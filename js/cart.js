@@ -104,6 +104,10 @@ document.querySelector('main').addEventListener('click', event1 => {
                                 <div class="loading-spinner"></div>
                     </div>
                     `;
+                    if (calculateQuantity() == 0) {
+                        window.location.hash = '';
+                        return;
+                    }
                     fetch("https://my-json-server.typicode.com/danil0110/McDonaldsDB/products", { method: 'POST' })
                         .then(response => {
                             if (response.ok) {
