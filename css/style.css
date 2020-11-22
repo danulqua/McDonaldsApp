@@ -93,3 +93,20 @@ footer a:hover {
 footer i {
     font-size: 24px;
 }
+
+/* ЗАГРУЗКА, СПИННЕР, LOADING, SPINNER */
+.loading-spinner {
+    width: 100px;
+    height: 100px;
+    border: 5px solid rgba(255, 193, 7, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffc107;
+    margin: auto;
+    animation: .7s spin infinite linear;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

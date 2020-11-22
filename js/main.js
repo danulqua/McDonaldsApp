@@ -8,6 +8,7 @@ let db;
 let view;
 
 window.onload = () => {
+    displayLoadingSpinner();
     fetch("https://my-json-server.typicode.com/danil0110/McDonaldsDB/db")
         .then(response => response.json())
         .then(data => {
@@ -27,6 +28,7 @@ window.onload = () => {
 }
 
 window.onhashchange = () => {
+    displayLoadingSpinner();
     let { viewName, categoryId, productId, offerId } = router.getCurrentPath(db);
     import(`./views/${viewName}.js`)
         .then(viewModule => {
@@ -50,4 +52,12 @@ function renderPage(categoryId, productId, offerId) {
     } else {
         templateEngine.render(view(db));
     }
+}
+
+function displayLoadingSpinner() {
+    document.querySelector('main').innerHTML = `
+    <div class="mt-4 pt-4">
+                <div class="loading-spinner"></div>
+    </div>
+    `;
 }
