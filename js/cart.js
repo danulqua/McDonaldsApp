@@ -92,17 +92,32 @@ document.querySelector('main').addEventListener('click', event1 => {
         let forms = document.getElementsByClassName('needs-validation');
         let validation = Array.prototype.filter.call(forms, form => {
             form.addEventListener('submit', event2 => {
-                if (!form.checkValidity()) {
-                    event2.preventDefault();
-                    event2.stopPropagation();
-                } else {
-                    clearCart();
+                event2.preventDefault();
+                event2.stopPropagation();
+                if (form.checkValidity()) {
+                    fetch("https://my-json-server.typicode.com/danil0110/McDonaldsDB/products", { method: 'POST' })
+                        .then(response => {
+                            if (response.ok) {
+                                if (calculateQuantity() == 0) {
+                                    return;
+                                }
+                                let orderId = generateOrderId();
+                                window.location.hash = `order/${orderId}`;
+                            }
+                            else {
+                                console.log('Error: try later');
+                            }
+                        });
                 }
                 form.classList.add('was-validated');
             });
         });
     }
 });
+
+function generateOrderId() {
+    return Math.floor(Math.random() * Math.floor(100000));
+}
 
 function clearCart() {
     let cart = JSON.parse(localStorage.getItem('cart'));
