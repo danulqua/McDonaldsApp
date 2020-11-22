@@ -58,7 +58,7 @@ function displayQuantityOnCartButton() {
     }
 }
 
-document.querySelector('main').onclick = event => {
+document.querySelector('main').addEventListener('click', event => {
     if (event.target.classList.contains('delete-button')) {
         let productId = event.target.id.split('-')[1];
         let card = document.getElementById(`card-${productId}`);
@@ -85,7 +85,22 @@ document.querySelector('main').onclick = event => {
         localStorage.setItem('cart', JSON.stringify(cart));
         displayQuantityOnCartButton();
     }
-}
+});
+
+document.querySelector('main').addEventListener('click', event1 => {
+    if (event1.target.id == 'submitButton') {
+        let forms = document.getElementsByClassName('needs-validation');
+        let validation = Array.prototype.filter.call(forms, form => {
+            form.addEventListener('submit', event2 => {
+                if (!form.checkValidity()) {
+                    event2.preventDefault();
+                    event2.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            });
+        });
+    }
+});
 
 window.addEventListener('load', () => {
     displayQuantityOnCartButton();

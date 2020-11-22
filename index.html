@@ -77,7 +77,7 @@
                           </ul>
                     </div>
                     <div class="col-md-8 col-sm-12">
-                        <form class="form">
+                        <form class="needs-validation" novalidate>
                             <h4 class="text-dark font-weight-bold pb-2">Персональні дані</h4>
                             <div class="row">
                                 <div class="col">
@@ -112,13 +112,15 @@
                                 <div class="col-sm-8">
                                     <div class="form-group">
                                         <label for="email">E-mail*</label>
-                                        <input type="email" class="form-control" id="email" required placeholder="mail@gmail.com">
+                                        <input type="email" class="form-control" id="email" required placeholder="mail@gmail.com" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
                                         <div class="invalid-feedback">
                                             Введіть правильну електронну адресу.
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <hr>
+                            <h4 class="text-dark font-weight-bold pb-2">Деталі замовлення</h4>
                             <div class="form-group">
                                 <label for="address">Адреса доставки*</label>
                                 <input type="text" class="form-control" id="address" required placeholder="Київ, вул. Ереванська, 16">
@@ -130,7 +132,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="date">Дата доставки*</label>
-                                        <input type="date" class="form-control" id="date" required">
+                                        <input type="date" class="form-control" id="date" min="2020-11-22" required pattern="[0-9]{2}[0-9]{2}[0-9]{4}">
                                         <div class="invalid-feedback">
                                             Оберіть дату доставки.
                                         </div>
@@ -138,8 +140,11 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="time">Час доставки*</label>
-                                        <input type="time" class="form-control" id="time" required>
+                                        <label for="time">
+                                            Час доставки*
+                                            <span class="text-muted">(10:00 - 22:00)</span>
+                                        </label>
+                                        <input type="time" class="form-control" id="time" min="10:00" max="22:00" required>
                                         <div class="invalid-feedback">
                                             Оберіть час доставки.
                                         </div>
@@ -176,7 +181,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <button class="btn btn-warning font-weight-bold" type="submit">Сплатити</button>
+                            <button id="submitButton" class="btn btn-warning font-weight-bold" type="submit">Сплатити</button>
                         </form>
                     </div>
                 </div>
