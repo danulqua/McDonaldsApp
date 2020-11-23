@@ -1,7 +1,7 @@
 const view = (db, productId) => {
     let result = ``;
     result += `
-            <div class="row">
+            <div class="row mt-4">
                 <div class="col-lg-8">
                     <img class="w-100" src="${db.products[productId - 1].img}" alt="${db.products[productId - 1].name}">
                 </div>

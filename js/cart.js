@@ -7,6 +7,7 @@ function addToCart() {
     };
 
     if (JSON.parse(localStorage.getItem('cart')) === null || JSON.parse(localStorage.getItem('cart')).length == 0) {
+        cart = new Array;
         cart.push(product);
     } else {
         cart = JSON.parse(localStorage.getItem('cart'));

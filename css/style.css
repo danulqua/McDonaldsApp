@@ -99,6 +99,10 @@ div.card:hover {
     width: 100px;
 }
 
+.complete-order {
+    width: 300px;
+}
+
 /* ФУТЕР, FOOTER */
 footer a:hover {
     text-decoration: underline;

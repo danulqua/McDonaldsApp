@@ -7,7 +7,7 @@ const view = db => {
                 <h2 class="text-center text-dark font-weight-bold">Дякуємо! :)</h2>
                 <h3 class="text-center text-dark font-weight-bold">Ваше замовлення №${window.location.hash.split('/')[1]}</h3>
                 <div class="d-flex justify-content-center row mt-5">
-                    <div class="col-4">
+                    <div class="complete-order">
                         <ul class="list-group">
     `;
     let totalPrice = 0;
